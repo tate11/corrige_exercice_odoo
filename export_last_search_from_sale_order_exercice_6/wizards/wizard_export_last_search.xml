@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="wizard_export_last_search">
+            <field name="name">Wizard export last search in sale order</field>
+            <field name="model">export.last.search.wizard</field>
+            <field name="arch" type="xml">
+                <form string="wizard Export">
+                    <group>
+                        <field name="name"/>
+                    </group>
+                    <footer>
+                        <button name="create_request"
+                                string="Finished" type="object"
+                                class="btn-primary"/>
+                        <button string="Cancel"
+                                class="btn-default"
+                                special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+        <record id="action_view_wizard_export_last_search" model="ir.actions.act_window">
+            <field name="name">wizard Export</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">export.last.search.wizard</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="wizard_export_last_search"/>
+            <field name="target">new</field>
+        </record>
+
+
+
+    </data>
+</odoo>

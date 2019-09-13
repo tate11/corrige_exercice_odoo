@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+         <record id="action_server_export_last_search" model="ir.actions.server">
+            <field name="name">Export last search</field>
+            <field name="model_id" ref="export_last_search_from_sale_order.model_sale_order"/>
+            <field name="condition">True</field>
+            <field name="type">ir.actions.server</field>
+            <field name="state">code</field>
+            <field name="code">record.export_last_search()</field>
+        </record>
+    </data>
+</odoo>

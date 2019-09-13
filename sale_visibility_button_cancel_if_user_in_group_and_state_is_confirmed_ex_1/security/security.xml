@@ -1,0 +1,7 @@
+<odoo>
+
+        <record id="group_cancel_confirmed_order" model="res.groups">
+            <field name="name">Annuler les commandes confirmées</field>
+        </record>
+
+</odoo>

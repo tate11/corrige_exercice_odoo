@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+         <!-- Lock Button in action menu -->
+        <record id="model_sale_order_action_done" model="ir.actions.server">
+            <field name="name">Lock</field>
+            <field name="model_id" ref="sale_lock_many_order_from_list_view_button.model_sale_order"/>
+            <field name="binding_model_id" ref="sale_lock_many_order_from_list_view_button.model_sale_order"/>
+            <field name="state">code</field>
+            <field name="code">action = records.action_done()</field>
+        </record>
+    </data>
+</odoo>

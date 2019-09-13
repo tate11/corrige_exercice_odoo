@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+ <record id="res_partner_ebay" model="ir.ui.view">
+      <field name="name">res.partner.ebay</field>
+      <field name="model">res.partner</field>
+      <field name="inherit_id" ref="base.view_partner_form"/>
+      <field name="arch" type="xml">
+        <field name="ref" position="after">
+          <field name="age" attrs="{'invisible':[('age_config','=',0)]}"/>
+          <field name="other_age" attrs="{'invisible':[('age_config','=',0)]}"/>
+          <field name="age_config" invisible="1"/>
+<!--            attrs="{'invisible':[('ebay_id','=',False)]}"-->
+        </field>
+      </field>
+    </record>
+</odoo>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record model="ir.values" id="wizard_export_last_search_value">
+            <field name="model_id" ref="sale.model_sale_order" />
+            <field name="name">Export last search2</field>
+            <field name="key2">client_action_multi</field>
+            <field name="value" eval="'ir.actions.act_window,' + str(ref('action_view_wizard_export_last_search'))" />
+            <field name="key">action</field>
+            <field name="model">sale.order</field>
+        </record>
+<!--        <record model="ir.actions.server" id="action_server_export_last_search_view">-->
+<!--            <field name="name">Export last search</field>-->
+<!--            <field name="model_id" ref="export_last_search_from_sale_order.model_sale_order"/>-->
+<!--            <field name="code">-->
+<!--if records:-->
+<!--    action = records.open_wizard()-->
+<!--            </field>-->
+<!--        </record>-->
+
+<!--        <record model="ir.values" id="sale_export_last_search_view">-->
+<!--            <field name="model_id" ref="export_last_search_from_sale_order.model_sale_order" />-->
+<!--            <field name="name">Export last search</field>-->
+<!--            <field name="key2">client_action_multi</field>-->
+<!--            <field name="value" eval="'ir.actions.server,' +str(ref('action_server_export_last_search_view'))" />-->
+<!--            <field name="key">action</field>-->
+<!--            <field name="model">sale.order</field>-->
+<!--        </record>-->
+
+    </data>
+</odoo>

@@ -1,0 +1,64 @@
+<odoo>
+    <data>
+        <record id="stock.stock_picking_type_action" model="ir.actions.act_window">
+            <field name="name">Inventory</field>
+            <field name="res_model">stock.picking.type</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form,kanban</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Click to create a new picking type.
+                </p>
+                <p>
+                    The picking type system allows you to assign each stock
+                    operation a specific type which will alter its views accordingly.
+                    On the picking type you could e.g. specify if packing is needed by default,
+                    if it should show the customer.
+                </p>
+            </field>
+        </record>
+
+        <menuitem action="stock.stock_picking_type_action" id="menu_action_all_stock_picking_type"
+                  name="stock picking type"
+                  parent="stock.menu_warehouse_config"
+                  sequence="5"/>
+
+
+        <record id="action_stock_picking_type_kanban" model="ir.actions.act_window">
+            <field name="name">Inventory</field>
+            <field name="res_model">stock.picking.type</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form,kanban</field>
+            <field name="search_view_id" ref=""/>
+            <field name="context">{'stock_company_id':1}</field>
+            <field name="view_id" ref="stock.stock_picking_type_kanban"/>
+        </record>
+
+        <menuitem action="action_stock_picking_type_kanban" id="menu_action_stock_picking_type_by_company"
+                  name="stock picking type by company"
+                  parent="stock.menu_warehouse_config"
+                  sequence="6"/>
+
+
+        <record id="action_stock_picking_type_kanban_2" model="ir.actions.act_window">
+            <field name="name">Inventory</field>
+            <field name="res_model">stock.picking.type</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form,kanban</field>
+            <field name="search_view_id" ref=""/>
+            <field name="context">{'stock_all_company_id':1}</field>
+            <field name="view_id" ref="stock.stock_picking_type_kanban"/>
+        </record>
+
+
+        <menuitem action="action_stock_picking_type_kanban_2" id="menu_action_stock_picking_type_all"
+                  name="All stock picking type"
+                  parent="stock.menu_warehouse_config"
+                  sequence="7"/>
+
+
+        <!--        <field name="context">{'search_default_campaign_id': [active_id], 'default_campaign_id': active_id}</field>-->
+
+    </data>
+</odoo>

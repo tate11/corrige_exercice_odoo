@@ -1,0 +1,63 @@
+<odoo>
+    <data>
+        <record id="view_order_line_form" model="ir.ui.view">
+            <field name="name">like.sale.line.form</field>
+            <field name="model">like.sale.line</field>
+            <field name="arch" type="xml">
+                <form string="Sales Order" class="o_sale_order">
+                    <sheet>
+                        <group col="4">
+                            <field name="product_id"/>
+                            <field name="product_uom_qty"/>
+                            <field name="product_uom"/>
+                            <field name="price_unit"/>
+                        </group>
+
+                        <group col="4">
+                          <field name="currency_id"/>
+                            <field name="discount" class="oe_inline"/>
+                            <field name="tax_id" widget="many2many_tags"/>
+                        </group>
+                        <group col="4">
+<!--                        <label for="tax_total"/>-->
+                        <field name="price_tax" widget="monetary"/>
+<!--                         <label for="price_total"/>-->
+                        <field name="price_total" widget="monetary"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_order_line_tree" model="ir.ui.view">
+            <field name="name">like.sale.line.tree</field>
+            <field name="model">like.sale.line</field>
+            <field name="arch" type="xml">
+                <tree string="Sales Order Lines">
+                    <field name="product_id"/>
+                    <field name="product_uom_qty"/>
+                    <field name="product_uom"/>
+                    <field name="price_unit"/>
+                    <field name="currency_id"/>
+                    <field name="discount"/>
+                    <field name="tax_id"/>
+                    <field name="price_tax"/>
+                    <field name="price_total"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_like_sale_order" model="ir.actions.act_window">
+            <field name="name">Sales Orders</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">like.sale.line</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem action="action_like_sale_order" id="menu_list_sale_line"
+                  name="Sale Order lines"
+                  parent="sales_team.menu_sales"
+                  sequence="5"/>
+    </data>
+</odoo>

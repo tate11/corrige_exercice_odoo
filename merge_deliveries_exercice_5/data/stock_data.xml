@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+<!--        <record id="contract_set_as_pending" model="ir.actions.server">-->
+<!--            <field name="name">HR Contract: set as pending</field>-->
+<!--            <field name="model_id" ref="model_hr_contract"/>-->
+<!--            <field name="condition">True</field>-->
+<!--            <field name="type">ir.actions.server</field>-->
+<!--            <field name="state">code</field>-->
+<!--            <field name="code">record.set_as_pending()</field>-->
+<!--        </record>-->
+         <!-- Lock Button in action menu -->
+        <record id="stock_list_view_merge" model="ir.actions.server">
+            <field name="name">Merge</field>
+            <field name="model_id" ref="merge_deliveries.model_stock_picking"/>
+            <field name="condition">True</field>
+            <field name="type">ir.actions.server</field>
+            <field name="state">code</field>
+            <field name="code">record.merge_delivery()</field>
+        </record>
+    </data>
+</odoo>
